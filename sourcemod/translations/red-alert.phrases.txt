@@ -1,0 +1,14 @@
+"Phrases"
+{
+	"HUD Alert Message"
+	{
+		"#format"	"{1:d},{2:s}"
+		"en"	"<font class='fontSize-l' color='#ff0000'> נשמעות אזעקות ){1}( ב: {2}</font>"
+	}
+
+	"Chat Alert Message"
+	{
+		"#format"	"{1:d},{2:s}"
+		"en"	"{darkred}נשמעות אזעקות ){1}( ב: {2}"
+	}
+}
