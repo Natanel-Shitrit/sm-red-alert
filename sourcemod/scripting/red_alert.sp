@@ -145,7 +145,9 @@ void SetupAlertsAPI()
 {
     LogMessage("Connecting to alerts API...");
     char alert_api_domain[256];
-    if (!g_AlertAPIDomain.GetString(alert_api_domain, sizeof(alert_api_domain)))
+    g_AlertAPIDomain.GetString(alert_api_domain, sizeof(alert_api_domain));
+    
+    if (!alert_api_domain[0])
     {
         LogMessage("No Alert-API domain, skipping...");
         return;
