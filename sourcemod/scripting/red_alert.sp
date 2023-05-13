@@ -132,6 +132,7 @@ void SetupConVars()
     LogMessage("Adding ConVar Hooks...");
     g_SoundPath.GetString(g_AlertSound, sizeof(g_AlertSound));
     g_SoundPath.AddChangeHook(ChangeHook_HandleAlertSound);
+    g_AlertAPIDomain.AddChangeHook(ChangeHook_HandleAlertAPIDomain);
 }
 
 void SetupCommands()
@@ -566,6 +567,11 @@ void ChangeHook_HandleAlertSound(ConVar convar, const char[] oldValue, const cha
 {
     strcopy(g_AlertSound, sizeof(g_AlertSound), newValue);
     OnMapStart();
+}
+
+void ChangeHook_HandleAlertAPIDomain(ConVar convar, const char[] oldValue, const char[] newValue)
+{
+    SetupAlertsAPI();
 }
 
 /*************************
